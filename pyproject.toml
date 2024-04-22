@@ -6,6 +6,8 @@ authors = ["NotAussie <NotAussie@duck.com>"]
 readme = "README.md"
 license = "MIT"
 keywords = ["caching", "cache", "keystore"]
+repository = "https://github.com/NotAussie/bookcache"
+homepage = "https://pypi.org/project/bookcache/"
 classifiers = [
     "Development Status :: 1 - Planning",
     "Framework :: AsyncIO",
