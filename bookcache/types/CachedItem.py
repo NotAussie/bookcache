@@ -31,12 +31,4 @@ class CachedItem(BaseModel):
     createdAt: datetime
     expireAt: datetime
     librarianIteration: int
-    value: typing.Union[
-        str,
-        int,
-        float,
-        tuple,
-        list,
-        dict,
-        object,
-    ]
+    value: typing.Any

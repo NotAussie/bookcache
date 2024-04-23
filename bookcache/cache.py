@@ -67,8 +67,10 @@ class Cache:
         # Iterate over the library.
         for key, value in self._library:
             # Check if the item was added in the same iteration
-            if value.librarianIteration == self._librarianIteration:
-                continue
+            # if value.librarianIteration == self._librarianIteration:
+            # continue
+            # ^ ^ ^
+            # Going to rethink this feature as it could have issues.
 
             # Check if the expiry time has passed
             if value.expireAt < currentTime:
@@ -85,3 +87,25 @@ class Cache:
         self._taskLibrarianScan = loop.create_task(
             periodically(self.librarianScan(), self._iterationTiming)
         )
+
+    async def Get(self, key: str) -> typing.Any:
+        """
+        Fetches the entered key from the cache.
+
+        ----
+
+        Arguments:
+            `key` (`str`): The key to look up.
+
+        Returns:
+            `any`: The value of the cached object.
+        """
+
+        # Attempt to grab the item from cache
+        field: CachedItem = self._library.get(key)
+
+        # Return None if key is empty
+        if not field:
+            return None
+
+        return field.value
