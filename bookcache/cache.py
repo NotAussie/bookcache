@@ -84,14 +84,14 @@ class Cache:
         # Bump the iteration count
         self._librarianIteration += 1
 
-    async def init(self, loop: asyncio.BaseEventLoop) -> None:
-        """Initializes the librarian background functions and initializes other miscellaneous things."""
+    # async def init(self, loop: asyncio.BaseEventLoop) -> None:
+    # """Initializes the librarian background functions and initializes other miscellaneous things."""
 
-        # Initialize scanner function
-        # self._taskLibrarianScan = loop.create_task(self.librarianScanner())
-        # await self._taskLibrarianScan
+    # Initialize scanner function
+    # self._taskLibrarianScan = loop.create_task(self.librarianScanner())
+    # await self._taskLibrarianScan
 
-        raise NotImplemented
+    # raise NotImplemented
 
     async def Set(self, key: str, value: typing.Any, ttl: float = None) -> CachedItem:
         """
